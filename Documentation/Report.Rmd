@@ -4,20 +4,27 @@ author: "Aleena Alby"
 date: "22/10/2022"
 output: pdf_document
 bibliography: /Users/aleenaalby/Desktop/Diabetic-Retinopathy-detection/Documentation/references.bib 
-
+link-citations: true
 ---
+
+```{=tex}
 \pagebreak
 \tableofcontents
 \pagebreak
+```
 # Abstract
 
+[@diabetic]
 
+# 1. Introduction
 
-# 1. Introducation
 ## 1.1 Background of the project
 
 # 2. Literature Review
-This is reference using bibTex @abramoff2010automated
+
+This is reference using bibTex [@abramoff2010automated]
+
+# 
 
 # 3. Methodology
 
@@ -32,5 +39,3 @@ This is reference using bibTex @abramoff2010automated
 # 8. Conclusion
 
 # Bibliography and References
-
-
