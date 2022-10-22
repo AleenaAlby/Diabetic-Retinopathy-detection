@@ -1,0 +1,26 @@
+---
+title: "DIABETIC RETINOPATHY PREDICTION USING DEEP LEARNING"
+author: "Aleena Alby"
+date: "22/10/2022"
+output: pdf_document
+---
+
+
+# 1. Introducation
+## 1.1 Background of the project
+
+# 2. Literature Review
+
+# 3. Methodology
+
+# 4. Requirements
+
+# 5. Analysis
+
+# 6. Design
+
+# 7. Implementation
+
+# 8. Conclusion
+
+# Bibliography and References
