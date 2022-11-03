@@ -3,6 +3,7 @@ title: "DIABETIC RETINOPATHY PREDICTION USING DEEP LEARNING"
 author: "Aleena Alby"
 date: "22/10/2022"
 output: pdf_document
+  
 bibliography: /Users/aleenaalby/Desktop/Diabetic-Retinopathy-detection/Documentation/references.bib 
 link-citations: true
 ---
@@ -14,24 +15,47 @@ link-citations: true
 ```
 # Abstract
 
-
 [@diabetic]
 
-# 1. Introduction
+# I. Introduction
 
 ## 1.1 Background of the project
 
-# 2. Literature Review
+# II. Literature Review
 
 This is reference using bibTex [@abramoff2010automated]
 
 # 
 
-# 3. Methodology
+# III. Methodology
 
-# 4. Requirements
+### *a. Dataset*
 
-# 5. Analysis
+For this research project I'm using dataset available at Kaggle[@diabetica_data]. This Retinal images were provided by EyePACS. The dataset containing large set of high-resolution retina images taken under a variety of imaging conditions. For each image, a left and right field is provided. Images are identified by a image id and either the left or right eye (for example, 1 left.jpeg represents the patient number 1's left eye).
+
++---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
+| DR classes    | Level  | Description                                                                                                                       |
++===============+========+===================================================================================================================================+
+| No DR         | 0      | Healthy Retina (Normal)                                                                                                           |
++---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Mild          | 1      | Retina with tiny bulges (microaneurysms)                                                                                          |
++---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Moderate      | 2      | Retina with microaneurysms, higher risk of developing vision problems in the future                                               |
++---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Severe        | 3      | Retina with severe and widespread microaneurysms, including bleeding into the retina                                              |
++---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Proliferative | 4      | New blood vessels and scar tissue have formed on your retina, which can cause significant bleeding and lead to retinal detachment |
++---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
+
+: [@diabetic2017]
+
+![Normal Retina Vs Diabetic Retinopathy Retina [@diabetica]](images/image%201.jpg "Normal Retina Vs Diabetic retinopathy Retina [@diabetica]"){width="400" height="300"}
+
+### *b. Data pre-processing*
+
+# IV. Requirements
+
+# V. Analysis
 
 # 6. Design
 
