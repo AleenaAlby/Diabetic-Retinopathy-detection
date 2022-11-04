@@ -15,17 +15,11 @@ link-citations: true
 ```
 # Abstract
 
-[@diabetic]
-
 # I. Introduction
 
 ## 1.1 Background of the project
 
 # II. Literature Review
-
-This is reference using bibTex [@abramoff2010automated]
-
-# 
 
 # III. Methodology
 
@@ -52,6 +46,12 @@ For this research project I'm using dataset available at Kaggle[@diabetica_data]
 ![Normal Retina Vs Diabetic Retinopathy Retina [@diabetica]](images/image%201.jpg "Normal Retina Vs Diabetic retinopathy Retina [@diabetica]"){width="400" height="300"}
 
 ### *b. Data pre-processing*
+
+The plot below illustrates the class imbalance in the original dataset.
+
+![Sum of number of records for each level](images/LevelsOfDR.png){width="343"}
+
+The dataset consist of 35,126 set of images. The classes have an uneven distribution of images.
 
 # IV. Requirements
 
