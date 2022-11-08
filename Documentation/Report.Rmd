@@ -17,9 +17,13 @@ link-citations: true
 
 # I. Introduction
 
+One of the major causes of eye vision loss is diabetes. While delayed examination would have a higher effect on the retinal area of the eye, early detection of diabetes is crucial.
+
 ## 1.1 Background of the project
 
 # II. Literature Review
+
+\pagebreak
 
 # III. Methodology
 
@@ -47,11 +51,27 @@ For this research project I'm using dataset available at Kaggle[@diabetica_data]
 
 ### *b. Data pre-processing*
 
-The plot below illustrates the class imbalance in the original dataset.
+Image pre-processing was performed with the aim to decrease unclear image and reduce image size. The plot below illustrates the class imbalance in the original dataset.
 
 ![Sum of number of records for each level](images/LevelsOfDR.png){width="343"}
 
-The dataset consist of 35,126 set of images. The classes have an uneven distribution of images.
+The dataset consist of 35,126 set of images. The orginal image have 1944 \* 2592 \* 3 size, and all images are jpeg format. The classes have an uneven distribution of images.
+
+\pagebreak
+
+1.  Image Resizing
+
+    Due to the enormous size of the dataset, it was drastically downsized before being sent to the network. Each input image is 256 \* 256 in size after resizing.
+
+2.  Removing Unclear Image
+
+    Some images have a blackish or white tint. Because it might affect the outcome, this type of image cannot be fed into the network. The removal of an unclear image is a crucial step that must be taken.
+
+3.  Dividing images into classes
+
+    Images are classified into 5 folders based on the DR levels.
+
+\pagebreak
 
 # IV. Requirements
 
@@ -62,5 +82,7 @@ The dataset consist of 35,126 set of images. The classes have an uneven distribu
 # 7. Implementation
 
 # 8. Conclusion
+
+\pagebreak
 
 # Bibliography and References
