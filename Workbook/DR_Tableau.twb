@@ -360,11 +360,6 @@
             <card type='title' />
           </strip>
         </edge>
-        <edge name='right'>
-          <strip size='160'>
-            <card pane-specification-id='0' param='[federated.19homin04fzh5j1gjb2dk0w1gpce].[cnt:level:ok]' type='color' />
-          </strip>
-        </edge>
       </cards>
       <viewpoint>
         <highlight>

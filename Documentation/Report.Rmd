@@ -2,12 +2,44 @@
 title: "DIABETIC RETINOPATHY PREDICTION USING DEEP LEARNING"
 author: "Aleena Alby"
 date: "22/10/2022"
-output: pdf_document
-  
+output: 
+    pdf_document:
+      number_sections: true
 bibliography: /Users/aleenaalby/Desktop/Diabetic-Retinopathy-detection/Documentation/references.bib 
 link-citations: true
 ---
 
+\newpage
+
+**Declaration of Originality**
+
+I declare that this project is all my own work and has not been copied in part or in whole from any other source except where duly acknowledged. As such, all use of previously published work (from books, journals, magazines, internet etc.) has been acknowledged by citation within the main report to an item in the References or Bibliography lists. I also agree that an electronic copy of this project may be stored and used for the purposes of plagiarism prevention and detection.
+
+**Statement of copyright**
+
+I acknowledge that the copyright of this project report, and any product developed as part of the project, belong to Coventry University. Support, including funding, is available to commercialise products and services developed by staff and students. Any revenue that is generated is split with the inventor/s of the product or service. For further information please see [www.coventry.ac.uk/ipr](http://www.coventry.ac.uk/ipr) or contact [ipr\@coventry.ac.uk](mailto:ipr@coventry.ac.uk){.email}.
+
+**Statement of ethical engagement**
+
+I declare that a proposal for this project has been submitted to the Coventry University ethics monitoring website (<https://ethics.coventry.ac.uk/>) and that the application number is listed below (Note: Projects without an ethical application number will be rejected for marking)
+
+\[Signed:\]{AleenaAlby} [Date:]{.ul}
+
+Please complete all fields.
+
+| First Name: Aleena                      |
+|:----------------------------------------|
+| Last Name: Alby                         |
+| Student ID number                       |
+| Ethics Application Number               |
+| 1^st^ Supervisor Name Prof James Brusey |
+| 2^nd^ Supervisor Name                   |
+
+```{=html}
+<!--  **This form must be completed, scanned and included with your project
+submission to Turnitin. Failure to append these declarations may result
+in your project being rejected for marking.** -->
+```
 ```{=tex}
 \pagebreak
 \tableofcontents
@@ -15,41 +47,39 @@ link-citations: true
 ```
 # Abstract
 
-# I. Introduction
+# Introduction
 
-One of the major causes of eye vision loss is diabetes. While delayed examination would have a higher effect on the retinal area of the eye, early detection of diabetes is crucial.
+One of the major causes of eye vision loss is diabetes. While delayed examination would have a higher effect on the retinal area of the eye, early detection of diabetes is crucial. ## Background to the Project
 
-## 1.1 Background of the project
+## Project Objectives
 
-# II. Literature Review
+## Overview of This Report
+
+# Literature Review
+
+A model to identify diabetic retinopathy at an earlier stage has been developed by a number of researchers.
 
 \pagebreak
 
-# III. Methodology
+# Methodology
 
-### *a. Dataset*
+### *Dataset*
 
 For this research project I'm using dataset available at Kaggle[@diabetica_data]. This Retinal images were provided by EyePACS. The dataset containing large set of high-resolution retina images taken under a variety of imaging conditions. For each image, a left and right field is provided. Images are identified by a image id and either the left or right eye (for example, 1 left.jpeg represents the patient number 1's left eye).
 
-+---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
-| DR classes    | Level  | Description                                                                                                                       |
-+===============+========+===================================================================================================================================+
-| No DR         | 0      | Healthy Retina (Normal)                                                                                                           |
-+---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
-| Mild          | 1      | Retina with tiny bulges (microaneurysms)                                                                                          |
-+---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
-| Moderate      | 2      | Retina with microaneurysms, higher risk of developing vision problems in the future                                               |
-+---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
-| Severe        | 3      | Retina with severe and widespread microaneurysms, including bleeding into the retina                                              |
-+---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
-| Proliferative | 4      | New blood vessels and scar tissue have formed on your retina, which can cause significant bleeding and lead to retinal detachment |
-+---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
+| DR classes    | Level | Description                                                                                                                       |
+|---------------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
+| No DR         | 0     | Healthy Retina (Normal)                                                                                                           |
+| Mild          | 1     | Retina with tiny bulges (microaneurysms)                                                                                          |
+| Moderate      | 2     | Retina with microaneurysms, higher risk of developing vision problems in the future                                               |
+| Severe        | 3     | Retina with severe and widespread microaneurysms, including bleeding into the retina                                              |
+| Proliferative | 4     | New blood vessels and scar tissue have formed on your retina, which can cause significant bleeding and lead to retinal detachment |
 
 : [@diabetic2017]
 
 ![Normal Retina Vs Diabetic Retinopathy Retina [@diabetica]](images/image%201.jpg "Normal Retina Vs Diabetic retinopathy Retina [@diabetica]"){width="400" height="300"}
 
-### *b. Data pre-processing*
+### *Data pre-processing*
 
 Image pre-processing was performed with the aim to decrease unclear image and reduce image size. The plot below illustrates the class imbalance in the original dataset.
 
@@ -73,16 +103,49 @@ The dataset consist of 35,126 set of images. The orginal image have 1944 \* 2592
 
 \pagebreak
 
-# IV. Requirements
+# Requirements
 
-# V. Analysis
+# Analysis
 
-# 6. Design
+# Design
 
-# 7. Implementation
+# Implementation
 
-# 8. Conclusion
+# Testing
 
-\pagebreak
+# Project Management
 
-# Bibliography and References
+## Project Schedule
+
+## Risk Management
+
+## Quality Management
+
+## Social, Legal, Ethical and Professional Considerations
+
+# Critical Appraisal
+
+# Conclusions
+
+## Achievements
+
+## Future Work
+
+# Student Reflections
+
+# References
+
+::: {#refs}
+:::
+
+Appendix A -- Project Specification
+
+Appendix B -- Interim Progress Report and Meeting Records
+
+Appendix C -- Requirements Specification Document
+
+Appendix D -- User Manual
+
+Appendix E -- Project Presentation
+
+Appendix F -- Certificate of Ethics Approval
