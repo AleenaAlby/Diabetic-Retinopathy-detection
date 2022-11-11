@@ -27,13 +27,19 @@ I declare that a proposal for this project has been submitted to the Coventry Un
 
 Please complete all fields.
 
-| First Name: Aleena                      |
-|:----------------------------------------|
-| Last Name: Alby                         |
-| Student ID number                       |
-| Ethics Application Number               |
-| 1^st^ Supervisor Name Prof James Brusey |
-| 2^nd^ Supervisor Name                   |
++--------------------------------------------------------+
+| First Name: Aleena                                     |
++:=======================================================+
+| Last Name: Alby                                        |
++--------------------------------------------------------+
+| Student ID number                                      |
++--------------------------------------------------------+
+| Ethics Application Number                              |
++--------------------------------------------------------+
+| 1^st^ Supervisor Name Prof James Brusey                |
++--------------------------------------------------------+
+| 2^nd^ Supervisor Name                                  |
++--------------------------------------------------------+
 
 ```{=html}
 <!--  **This form must be completed, scanned and included with your project
@@ -49,7 +55,9 @@ in your project being rejected for marking.** -->
 
 # Introduction
 
-One of the major causes of eye vision loss is diabetes. While delayed examination would have a higher effect on the retinal area of the eye, early detection of diabetes is crucial. ## Background to the Project
+One of the major causes of eye vision loss is diabetes. While delayed examination would have a higher effect on the retinal area of the eye, early detection of diabetes is crucial.
+
+## Background to the Project
 
 ## Project Objectives
 
@@ -57,29 +65,55 @@ One of the major causes of eye vision loss is diabetes. While delayed examinatio
 
 # Literature Review
 
-A model to identify diabetic retinopathy at an earlier stage has been developed by a number of researchers.
+In recent years, numerous deep learning based automatic DR detection systems have emerged. In this section, some of the recent research projects have been addressed.
+
+Using transfer learning, Esra Kaya and Ismail Saritas created CNN for the identification of diabetic retinopathy [@9828576]. They utilised the DRIVE dataset (Digital Retinal Images for Vessel Extraction). They utilised contrast-limited adaptive histogram equalisation to improve the clarity of the image. They assessed the ResNet18, GoogleNet, and SqueezeNet CNN architectures' performances as feature extraction techniques and classifiers. ResNet18 was discovered to be the most effective architecture as a classifier with 100% accuracy.
+
+Fundus images from the Kaggle opensource dataset were used by Nikhil Sathya Kumar and Dr. B. Ramaswamy Karthikeyan to identify DR using CNNs, Transformers, and MLPs [@9651024]. The findings show that, in comparison to CNN and MLP based models, Transformer based models were more accurate. The most accurate Transformer-based model was Swin with 92.49% accuracy.
+
+ImageNet model was proposed by Jayakumari.C et al [@9215270]. The model's training accuracy was 98.6%.
+
+\newpage
+
++--------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| Methods & Ref                        | Datasets Used                                                                  | Techniques                                                         | Performance metrics                                                                                                                  |
++======================================+:===============================================================================+====================================================================+======================================================================================================================================+
+| **CNN** [@9828576]                   | DRIVE dataset (40 images in the database were chosen randomly from 400 images) | They assessed the ResNet18, GoogleNet, and SqueezeNet              | ResNet18 - 100 %, GoogleNet - 68.2 %, SqueezeNet - 67.4 %                                                                            |
++--------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| **CNN**, MLP & Transfomer [@9651024] | Aptos dataset from Kaggle (6590 Images)                                        | \| EfficientNet, ResNet, MLP-Mixer, ViT , ViT+MLP, Swin and Swin+V | iT \| EfficientNet -91.18 %, ResNet - 89.63%, MLP-Mixer - 94.47%, ViT - 91.13 %, ViT+MLP - 89.73%, Swin - 92.49%, Swin+ViT - 91.91 % |
++--------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| **ImageNet** [@9215270]              | Kaggle Dataset                                                                 | ImageNet                                                           | 98.6%                                                                                                                                |
++--------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+
+: DR detection methods
 
 \pagebreak
 
 # Methodology
 
-### *Dataset*
+## *Dataset*
 
 For this research project I'm using dataset available at Kaggle[@diabetica_data]. This Retinal images were provided by EyePACS. The dataset containing large set of high-resolution retina images taken under a variety of imaging conditions. For each image, a left and right field is provided. Images are identified by a image id and either the left or right eye (for example, 1 left.jpeg represents the patient number 1's left eye).
 
-| DR classes    | Level | Description                                                                                                                       |
-|---------------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
-| No DR         | 0     | Healthy Retina (Normal)                                                                                                           |
-| Mild          | 1     | Retina with tiny bulges (microaneurysms)                                                                                          |
-| Moderate      | 2     | Retina with microaneurysms, higher risk of developing vision problems in the future                                               |
-| Severe        | 3     | Retina with severe and widespread microaneurysms, including bleeding into the retina                                              |
-| Proliferative | 4     | New blood vessels and scar tissue have formed on your retina, which can cause significant bleeding and lead to retinal detachment |
++---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
+| DR classes    | Level  | Description                                                                                                                       |
++===============+========+===================================================================================================================================+
+| No DR         | 0      | Healthy Retina (Normal)                                                                                                           |
++---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Mild          | 1      | Retina with tiny bulges (microaneurysms)                                                                                          |
++---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Moderate      | 2      | Retina with microaneurysms, higher risk of developing vision problems in the future                                               |
++---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Severe        | 3      | Retina with severe and widespread microaneurysms, including bleeding into the retina                                              |
++---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
+| Proliferative | 4      | New blood vessels and scar tissue have formed on your retina, which can cause significant bleeding and lead to retinal detachment |
++---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 : [@diabetic2017]
 
 ![Normal Retina Vs Diabetic Retinopathy Retina [@diabetica]](images/image%201.jpg "Normal Retina Vs Diabetic retinopathy Retina [@diabetica]"){width="400" height="300"}
 
-### *Data pre-processing*
+## *Data pre-processing*
 
 Image pre-processing was performed with the aim to decrease unclear image and reduce image size. The plot below illustrates the class imbalance in the original dataset.
 
@@ -133,10 +167,14 @@ The dataset consist of 35,126 set of images. The orginal image have 1944 \* 2592
 
 # Student Reflections
 
+\newpage
+
 # References
 
 ::: {#refs}
 :::
+
+\newpage
 
 Appendix A -- Project Specification
 
