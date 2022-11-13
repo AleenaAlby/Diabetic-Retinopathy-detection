@@ -1,10 +1,9 @@
 ---
-title: "DIABETIC RETINOPATHY PREDICTION USING DEEP LEARNING"
-author: "Aleena Alby"
-date: "22/10/2022"
 output: 
     pdf_document:
-      number_sections: true
+      includes:
+        before_body: title.sty
+        number_sections: true
 bibliography: /Users/aleenaalby/Desktop/Diabetic-Retinopathy-detection/Documentation/references.bib 
 link-citations: true
 ---
@@ -27,19 +26,19 @@ I declare that a proposal for this project has been submitted to the Coventry Un
 
 Please complete all fields.
 
-+--------------------------------------------------------+
-| First Name: Aleena                                     |
-+:=======================================================+
-| Last Name: Alby                                        |
-+--------------------------------------------------------+
-| Student ID number                                      |
-+--------------------------------------------------------+
-| Ethics Application Number                              |
-+--------------------------------------------------------+
-| 1^st^ Supervisor Name Prof James Brusey                |
-+--------------------------------------------------------+
-| 2^nd^ Supervisor Name                                  |
-+--------------------------------------------------------+
++-----------------------------------------------------+
+| First Name: Aleena                                  |
++:====================================================+
+| Last Name: Alby                                     |
++-----------------------------------------------------+
+| Student ID number                                   |
++-----------------------------------------------------+
+| Ethics Application Number                           |
++-----------------------------------------------------+
+| 1^st^ Supervisor Name Prof James Brusey             |
++-----------------------------------------------------+
+| 2^nd^ Supervisor Name                               |
++-----------------------------------------------------+
 
 ```{=html}
 <!--  **This form must be completed, scanned and included with your project
@@ -50,18 +49,24 @@ in your project being rejected for marking.** -->
 \pagebreak
 \tableofcontents
 \pagebreak
+\listoftables
+\pagebreak
+\listoffigures 
+\pagebreak
 ```
-# Abstract
-
 # Introduction
 
-One of the major causes of eye vision loss is diabetes. While delayed examination would have a higher effect on the retinal area of the eye, early detection of diabetes is crucial.
+One of the major causes of eye vision loss is diabetes. While delayed examination would have a higher effect on the retinal area of the eye, early detection of diabetes is crucial. The key factors affecting the rise in the occurrence of this disease are people's lifestyles and other contributing factors, and it is anticipated that this trend will continue. According to Tien Y Wong et al, among the 285 million diabetics worldwide, 33 percent of those individuals exhibit DR symptoms[@r2015]. Nearly 90% of individuals can be diagnosed, and long-term effects can be reduced, with thorough screening and regular checkups. The significant issue here is that DR is primarily an asymptomatic eye condition that does not manifest distinctive symptoms until a late stage is reached. The manual examination of retinal image features is a challenging and taxing task, nevertheless. Many automated diagnostic technologies have been created recently to help ophthalmologists examine retinal abnormalities, which has helped to solve this problem.
 
 ## Background to the Project
 
 ## Project Objectives
 
+Can DL outperform other methods such as SVM, Logistic Regression, Decision Tree in producing a high performing classifier for DR on unseen data?
+
 ## Overview of This Report
+
+\newpage
 
 # Literature Review
 
@@ -71,19 +76,25 @@ Using transfer learning, Esra Kaya and Ismail Saritas created CNN for the identi
 
 Fundus images from the Kaggle opensource dataset were used by Nikhil Sathya Kumar and Dr. B. Ramaswamy Karthikeyan to identify DR using CNNs, Transformers, and MLPs [@9651024]. The findings show that, in comparison to CNN and MLP based models, Transformer based models were more accurate. The most accurate Transformer-based model was Swin with 92.49% accuracy.
 
-ImageNet model was proposed by Jayakumari.C et al [@9215270]. The model's training accuracy was 98.6%.
+ImageNet model was proposed by Jayakumari.C et.al [@9215270]. The model's training accuracy was 98.6%.
+
+A CNN method was suggested by Frans Coenen et.al to diagnose DR with a sensitivity of 95 % and accuracy of 75% [@pratt2016convolutional].They train the network using a high-end graphics processor unit (GPU) on the publicly available Kaggle dataset.
 
 \newpage
 
-+--------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| Methods & Ref                        | Datasets Used                                                                  | Techniques                                                         | Performance metrics                                                                                                                  |
-+======================================+:===============================================================================+====================================================================+======================================================================================================================================+
-| **CNN** [@9828576]                   | DRIVE dataset (40 images in the database were chosen randomly from 400 images) | They assessed the ResNet18, GoogleNet, and SqueezeNet              | ResNet18 - 100 %, GoogleNet - 68.2 %, SqueezeNet - 67.4 %                                                                            |
-+--------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| **CNN**, MLP & Transfomer [@9651024] | Aptos dataset from Kaggle (6590 Images)                                        | \| EfficientNet, ResNet, MLP-Mixer, ViT , ViT+MLP, Swin and Swin+V | iT \| EfficientNet -91.18 %, ResNet - 89.63%, MLP-Mixer - 94.47%, ViT - 91.13 %, ViT+MLP - 89.73%, Swin - 92.49%, Swin+ViT - 91.91 % |
-+--------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| **ImageNet** [@9215270]              | Kaggle Dataset                                                                 | ImageNet                                                           | 98.6%                                                                                                                                |
-+--------------------------------------+--------------------------------------------------------------------------------+--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| Methods & Ref                            | Datasets Used                                                                  | Techniques                                                        | Performance metrics                                                                                                            |
++==========================================+:===============================================================================+===================================================================+================================================================================================================================+
+| **CNN** [@9828576]                       | DRIVE dataset (40 images in the database were chosen randomly from 400 images) | They assessed the ResNet18, GoogleNet, and SqueezeNet             | ResNet18 - 100 %, GoogleNet - 68.2 %, SqueezeNet - 67.4 %                                                                      |
++------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| **CNN**, **MLP & Transfomer** [@9651024] | Aptos dataset from Kaggle (6590 Images)                                        | EfficientNet, ResNet, MLP-Mixer, ViT , ViT+MLP, Swin and Swin+ViT | EfficientNet -91.18 %, ResNet - 89.63%, MLP-Mixer - 94.47%, ViT - 91.13 %, ViT+MLP - 89.73%, Swin - 92.49%, Swin+ViT - 91.91 % |
++------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| **ImageNet** [@9215270]                  | Kaggle Dataset                                                                 | ImageNet                                                          | 98.6%                                                                                                                          |
++------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| **CNN** [@pratt2016convolutional]        | Kaggle Dataset                                                                 | CNN                                                               | 75%                                                                                                                            |
+|                                          |                                                                                |                                                                   |                                                                                                                                |
+|                                          | (80,000 Images)                                                                |                                                                   |                                                                                                                                |
++------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 : DR detection methods
 
@@ -93,7 +104,7 @@ ImageNet model was proposed by Jayakumari.C et al [@9215270]. The model's traini
 
 ## *Dataset*
 
-For this research project I'm using dataset available at Kaggle[@diabetica_data]. This Retinal images were provided by EyePACS. The dataset containing large set of high-resolution retina images taken under a variety of imaging conditions. For each image, a left and right field is provided. Images are identified by a image id and either the left or right eye (for example, 1 left.jpeg represents the patient number 1's left eye).
+This study using dataset available at Kaggle[@diabetica_data]. This Retinal images were provided by EyePACS. The dataset containing large set of high-resolution retina images taken under a variety of imaging conditions. For each image, a left and right field is provided. Images are identified by a image id and either the left or right eye (for example, 1 left.jpeg represents the patient number 1's left eye).
 
 +---------------+--------+-----------------------------------------------------------------------------------------------------------------------------------+
 | DR classes    | Level  | Description                                                                                                                       |
