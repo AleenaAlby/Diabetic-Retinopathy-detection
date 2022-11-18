@@ -26,19 +26,19 @@ I declare that a proposal for this project has been submitted to the Coventry Un
 
 Please complete all fields.
 
-+-----------------------------------------------------+
-| First Name: Aleena                                  |
-+:====================================================+
-| Last Name: Alby                                     |
-+-----------------------------------------------------+
-| Student ID number                                   |
-+-----------------------------------------------------+
-| Ethics Application Number                           |
-+-----------------------------------------------------+
-| 1^st^ Supervisor Name Prof James Brusey             |
-+-----------------------------------------------------+
-| 2^nd^ Supervisor Name                               |
-+-----------------------------------------------------+
++-----------------------------------------------+
+| First Name: Aleena                            |
++:==============================================+
+| Last Name: Alby                               |
++-----------------------------------------------+
+| Student ID number                             |
++-----------------------------------------------+
+| Ethics Application Number                     |
++-----------------------------------------------+
+| 1^st^ Supervisor Name Prof James Brusey       |
++-----------------------------------------------+
+| 2^nd^ Supervisor Name                         |
++-----------------------------------------------+
 
 ```{=html}
 <!--  **This form must be completed, scanned and included with your project
@@ -72,35 +72,67 @@ Can DL outperform other methods such as SVM, Logistic Regression, Decision Tree 
 
 In recent years, numerous deep learning based automatic DR detection systems have emerged. In this section, some of the recent research projects have been addressed.
 
-Using transfer learning, Esra Kaya and Ismail Saritas created CNN for the identification of diabetic retinopathy [@9828576]. They utilised the DRIVE dataset (Digital Retinal Images for Vessel Extraction). They utilised contrast-limited adaptive histogram equalisation to improve the clarity of the image. They assessed the ResNet18, GoogleNet, and SqueezeNet CNN architectures' performances as feature extraction techniques and classifiers. ResNet18 was discovered to be the most effective architecture as a classifier with 100% accuracy.
+Using transfer learning, Esra Kaya and Ismail Saritas created CNN for the identification of diabetic retinopathy [@9828576]. To find the best effective architecture, photographs from the DRIVE (Digital Retinal Images for Vessel Extraction) dataset of DR patients and healthy people were classified using Convolutional Neural Network (CNN) architectures as a transfer learning technique. They utilised contrast-limited adaptive histogram equalisation to improve the clarity of the image. They assessed the ResNet18, GoogleNet, and SqueezeNet CNN architectures' performances as feature extraction techniques and classifiers. For ResNet18 and squuezeNet, they employed adam optimizer, while for googleNet, they used sgdm. There are 71 layers in ResNet18, 144 layers in GoogleNet, and 68 layers in SqueezeNet. ResNet18 was discovered to be the most effective architecture as a classifier with 100% accuracy.
 
-Fundus images from the Kaggle opensource dataset were used by Nikhil Sathya Kumar and Dr. B. Ramaswamy Karthikeyan to identify DR using CNNs, Transformers, and MLPs [@9651024]. The findings show that, in comparison to CNN and MLP based models, Transformer based models were more accurate. The most accurate Transformer-based model was Swin with 92.49% accuracy.
+Fundus images from the Kaggle opensource dataset were used by Nikhil Sathya Kumar and Dr. B. Ramaswamy Karthikeyan to identify DR using CNNs, Transformers, and MLPs [@9651024]. The dataset includes more than 3600 photographs with a resolution of 2416\*1736. ResNet and EfficientNet based on CNN, Vision-Transformer and SwinTransformer based on Transformer, and MLP-Mixer based on MLP architecture were the models chosen for this study.The findings show that, in comparison to CNN and MLP based models, Transformer based models were more accurate. All models underwent 15 epochs of training. The most accurate Transformer-based model was Swin with 92.49% accuracy.
 
-ImageNet model was proposed by Jayakumari.C et.al [@9215270]. The model's training accuracy was 98.6%.
+ImageNet model was proposed by Jayakumari.C et.al [@9215270]. Here the TensorFlow framework is used to build a convolutional neural network model in Python. The size of each image has been reduced to 224 X 224 X 3. The model trained the network using the Adam optimizer and categorical cross-entropy as a loss function. The model was executed 100 epochs. The model accuracy in training was 98.8%, and in validation accuracy was 98.5%.
 
 A CNN method was suggested by Frans Coenen et.al to diagnose DR with a sensitivity of 95 % and accuracy of 75% [@pratt2016convolutional].They train the network using a high-end graphics processor unit (GPU) on the publicly available Kaggle dataset.
 
+Pathak et.al classified early-stage DR using a deep learning method [@9432312]. They have employed a variety of classifier-based techniques, including SVM (Support Vector Machine), CNN (Convolution Neural Network), DCNN (Deep Convolution Neural Network), ANN (Artificial Neural Network), NB (Naive Bayes), and threshold-based strategies. The model achieved 90% accuracy for the SVM, 91% for the ANN, 92.9% for the NB, 97% for the Thresholding-Based, and 96.5% for the DCNN. They concluded that the DCNN technique is highly accurate and productive.
+
 \newpage
 
-+------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| Methods & Ref                            | Datasets Used                                                                  | Techniques                                                        | Performance metrics                                                                                                            |
-+==========================================+:===============================================================================+===================================================================+================================================================================================================================+
-| **CNN** [@9828576]                       | DRIVE dataset (40 images in the database were chosen randomly from 400 images) | They assessed the ResNet18, GoogleNet, and SqueezeNet             | ResNet18 - 100 %, GoogleNet - 68.2 %, SqueezeNet - 67.4 %                                                                      |
-+------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| **CNN**, **MLP & Transfomer** [@9651024] | Aptos dataset from Kaggle (6590 Images)                                        | EfficientNet, ResNet, MLP-Mixer, ViT , ViT+MLP, Swin and Swin+ViT | EfficientNet -91.18 %, ResNet - 89.63%, MLP-Mixer - 94.47%, ViT - 91.13 %, ViT+MLP - 89.73%, Swin - 92.49%, Swin+ViT - 91.91 % |
-+------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| **ImageNet** [@9215270]                  | Kaggle Dataset                                                                 | ImageNet                                                          | 98.6%                                                                                                                          |
-+------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| **CNN** [@pratt2016convolutional]        | Kaggle Dataset                                                                 | CNN                                                               | 75%                                                                                                                            |
-|                                          |                                                                                |                                                                   |                                                                                                                                |
-|                                          | (80,000 Images)                                                                |                                                                   |                                                                                                                                |
-+------------------------------------------+--------------------------------------------------------------------------------+-------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| Methods & Ref                                                                                                                                | Datasets Used                                                                                                  | Techniques                                                                                                                                                                                                                                                                          | Performance metrics                                                                                                            |
++==============================================================================================================================================+:===============================================================================================================+=====================================================================================================================================================================================================================================================================================+================================================================================================================================+
+| **CNN** [@9828576]                                                                                                                           | DRIVE dataset (40 images in the database were chosen randomly from 400 images)                                 | They assessed the ResNet18, GoogleNet, and SqueezeNet                                                                                                                                                                                                                               | ResNet18 - 100 %, GoogleNet - 68.2 %, SqueezeNet - 67.4 %                                                                      |
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| **CNN**, **MLP & Transfomer** [@9651024]                                                                                                     | Aptos dataset from Kaggle (6590 Images)                                                                        | EfficientNet, ResNet, MLP-Mixer, ViT , ViT+MLP, Swin and Swin+ViT                                                                                                                                                                                                                   | EfficientNet -91.18 %, ResNet - 89.63%, MLP-Mixer - 94.47%, ViT - 91.13 %, ViT+MLP - 89.73%, Swin - 92.49%, Swin+ViT - 91.91 % |
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| **ImageNet** [@9215270]                                                                                                                      | Kaggle Dataset                                                                                                 | ImageNet                                                                                                                                                                                                                                                                            | 98.6%                                                                                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| **CNN** [@pratt2016convolutional]                                                                                                            | Kaggle Dataset                                                                                                 | CNN                                                                                                                                                                                                                                                                                 | 75%                                                                                                                            |
+|                                                                                                                                              |                                                                                                                |                                                                                                                                                                                                                                                                                     |                                                                                                                                |
+|                                                                                                                                              | (80,000 Images)                                                                                                |                                                                                                                                                                                                                                                                                     |                                                                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| **SVM classifier-Based technique, CNN classifier, DCNN classifier, ANN classifier, NB classifier, Thresholding Based techniques**.[@9432312] | Indian Diabetic Retinopathy Image Dataset (IDRiD), High-Resolution Fundus (HRF) Image Database, Kaggle dataset | Using a classifier-based SVM (Support Vector Machine) method, Convolution neural network classifiers,  DCNN (deep convolution neural network) classifiers, artificial neural network classifiers, naive bayes classifiers, and threshold-based methods are examples of classifiers. | SVM - 90%                                                                                                                      |
+|                                                                                                                                              |                                                                                                                |                                                                                                                                                                                                                                                                                     |                                                                                                                                |
+|                                                                                                                                              |                                                                                                                |                                                                                                                                                                                                                                                                                     | CNN - Best                                                                                                                     |
+|                                                                                                                                              |                                                                                                                |                                                                                                                                                                                                                                                                                     |                                                                                                                                |
+|                                                                                                                                              |                                                                                                                |                                                                                                                                                                                                                                                                                     | ANN - 91%                                                                                                                      |
+|                                                                                                                                              |                                                                                                                |                                                                                                                                                                                                                                                                                     |                                                                                                                                |
+|                                                                                                                                              |                                                                                                                |                                                                                                                                                                                                                                                                                     | NB - 92.6%                                                                                                                     |
+|                                                                                                                                              |                                                                                                                |                                                                                                                                                                                                                                                                                     |                                                                                                                                |
+|                                                                                                                                              |                                                                                                                |                                                                                                                                                                                                                                                                                     | Thresholding Based -97%                                                                                                        |
+|                                                                                                                                              |                                                                                                                |                                                                                                                                                                                                                                                                                     |                                                                                                                                |
+|                                                                                                                                              |                                                                                                                |                                                                                                                                                                                                                                                                                     | DCNN - 96.5%                                                                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
 : DR detection methods
 
 \pagebreak
 
 # Methodology
+
+The software development life cycle involves using common business procedures for creating software applications. After carefully examining a few well-known models, including Waterfall, Iterative, V-Model, and Agile approach, I have chosen to adopt the Agile model in this study.
+
+**Agile Methodology**
+
+Agile is a method of software development that aims to provide functional software consistently through rapid iterations [@whatis]. An agile methodology emphasizes a cooperative, iterative, and incremental approach to project management.
+
+1.  **Better quality**
+
+2.  **Speed and flexibility**
+
+3.  **cost management**
+
+    The team consider the budget when making decisions after each stage.This is a crucial component of project management since it enables teams to comprehend the expenses associated with each feature, which will be taken into consideration when making strategic decisions.
+
+4.  **Project's progress is fully visible and updated in real-time**
+
+5.  **stakeholders' participation**
 
 ## *Dataset*
 
@@ -148,7 +180,25 @@ The dataset consist of 35,126 set of images. The orginal image have 1944 \* 2592
 
 \pagebreak
 
+This section reviews numerous approaches and methods for various classifiers.
+
 # Requirements
+
+## System Requirements
+
++--------------------+---------------+
+| System Type        | 64 bit        |
++--------------------+---------------+
+| OS Name            | Mac os mojave |
++--------------------+---------------+
+| Processor          | Intel Core i5 |
++--------------------+---------------+
+| Installed Physical | 8 GB          |
+|                    |               |
+| Memory (RAM)       |               |
++--------------------+---------------+
+
+: System Configuration
 
 # Analysis
 
