@@ -178,9 +178,17 @@ The dataset consist of 35,126 set of images. The orginal image have 1944 \* 2592
 
     Images are classified into 5 folders based on the DR levels.
 
+To obtain good accuracy for training, the images have been categorised into two groups since the Dataset primarily contains images from the No DR category and contains few images from other categories.
+
+**Data augmentation**
+
 \pagebreak
 
 This section reviews numerous approaches and methods for various classifiers.
+
+**Convolutional neural networks (CNN)**
+
+CNN is a powerful and effective image processing algorithm. Convolutional Neural Networks specialized in image & video recognition applications. CNN is primarily utilised for image analysis applications such segmentation, object detection, and image recognition [@tripathi2021].
 
 # Requirements
 
