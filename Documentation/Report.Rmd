@@ -1,10 +1,12 @@
 ---
 output:
-  word_document: default
   pdf_document:
     includes:
       before_body: title.sty
       number_sections: yes
+  word_document: default
+  html_document:
+    df_print: paged
 bibliography: /Users/aleenaalby/Desktop/Diabetic-Retinopathy-detection/Documentation/references.bib
 link-citations: yes
 header-includes:
@@ -54,6 +56,8 @@ in your project being rejected for marking.** -->
 # Abstract
 
 We used simple CNN, ResNet50, ResNet101, DenseNet201, VGG19, and EfficientNet in this study.
+
+Word count: `r as.integer(sub("(\\d+).+$", "\\1", system(sprintf("wc -w %s", knitr::current_input()), intern = TRUE))) - 20`
 
 ```{=tex}
 \pagebreak
@@ -357,11 +361,15 @@ Convolutional neural network ResNet-50 has 50 layers (48 convolutional layers, o
 
 # Testing
 
+\newpage
+
 # Project Management
+
+A project management comprises details like deadlines for various goals, whether all goals were achieved within the allotted time and budget with the desired quality, whether changes and substitute goals were made to the original goal, and how the project was organised and finished. To ensure a successful project, project management is crucial. Throughout this research project, three aspects of project management will be discussed, including Project schedule, Risk, and Quality management.
 
 ## Project Schedule
 
-\newpage
+For a clear understanding of how the project progresses, a work breakdown structure and timeline were developed. It is extremely important for the success of any project to have a clear timeline and a clear understanding of the work. As part of this work, I submitted an ethics application, created a project proposal, acquired knowledge of the various software programs we needed, conducted background research, analysed requirements, designed, gathered data, preprocessed the data, implemented the network, evaluated the network, and finally deployed it. All deadlines for submitting the ethical application, CW1 project proposal, CW2 project presentation, and CW3 final report submission have been met.
 
 ## Risk Management
 
@@ -384,6 +392,8 @@ Project risk management is the process of locating, evaluating, and dealing with
 : Risk management
 
 ## Quality Management
+
+To produce an acceptable project outcome, quality management is another aspect of project management. Managing the quality of a project requires a careful consideration of how it will be executed in order to produce high-quality deliverables. In order to execute the project effectively, top-notch hardware and software tools were employed. As part of the project outcome, supervisors were asked to provide regular feedback to ensure the output is of good and acceptable quality. Moreover, the timelines and plan for developing the project were scheduled under the supervision of the supervisor.
 
 ## Social, Legal, Ethical and Professional Considerations
 
@@ -446,10 +456,30 @@ Appendix A -- Project Specification
 
 Appendix B -- Interim Progress Report and Meeting Records
 
++------------+------------------------------+------------+------+
+| Meeting No | Discussed Topic              | Date       | Time |
++============+==============================+============+======+
+| 1          |                              | 20/09/2022 |      |
++------------+------------------------------+------------+------+
+| 2          |                              | 27/09/2022 |      |
++------------+------------------------------+------------+------+
+| 3          |                              | 07/10/2022 |      |
++------------+------------------------------+------------+------+
+| 4          |                              | 14/10/2022 |      |
++------------+------------------------------+------------+------+
+| 5          |                              | 15/11/2022 |      |
++------------+------------------------------+------------+------+
+| 6          |                              |            |      |
++------------+------------------------------+------------+------+
+
 Appendix C -- Requirements Specification Document
 
 Appendix D -- User Manual
 
 Appendix E -- Project Presentation
 
+\newpage
+
 Appendix F -- Certificate of Ethics Approval
+
+![](images/Screenshot%202022-12-05%20at%2002.20.50.png){width="565" height="756"}
