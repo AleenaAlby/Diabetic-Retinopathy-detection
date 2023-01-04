@@ -33,18 +33,23 @@ I acknowledge that the copyright of this project report, and any product develop
 
 I declare that a proposal for this project has been submitted to the Coventry University ethics monitoring website (<https://ethics.coventry.ac.uk/>) and that the application number is listed below (Note: Projects without an ethical application number will be rejected for marking)
 
-Signed: Date:
+Signed: ![](images/SIGN-PSC.jpg){width="62" height="42"}
 
-Please complete all fields.
+Date: 08-Dec-2022
 
-|                                         |
-|:----------------------------------------|
-| First Name: Aleena                      |
-| Last Name: Alby                         |
-| Student ID number                       |
-| Ethics Application Number               |
-| 1^st^ Supervisor Name Prof James Brusey |
-| 2^nd^ Supervisor Name                   |
++---------------------------+--------------------------+
+| First Name:               | Aleena                   |
++---------------------------+--------------------------+
+| Last Name:                | Alby                     |
++---------------------------+--------------------------+
+| Student ID number:        | 11865340                 |
++---------------------------+--------------------------+
+| Ethics Application Number | P142645                  |
++---------------------------+--------------------------+
+| 1^st^ Supervisor Name     | Prof. James Brusey       |
++---------------------------+--------------------------+
+| 2^nd^ Supervisor Name     | Dr Fei He                |
++---------------------------+--------------------------+
 
 ```{=html}
 <!--  **This form must be completed, scanned and included with your project
@@ -55,9 +60,9 @@ in your project being rejected for marking.** -->
 
 # Abstract
 
-We used simple CNN, ResNet50, ResNet101, DenseNet201, VGG19, and EfficientNet in this study.
+Diabetic retinopathy is a complication of diabetes caused by high blood sugar levels damaging the back of the eye (retina) [@diabetic]. It can cause blindness if left undiagnosed and untreated. The more severe form of diabetic retinopathy, known as proliferative diabetic retinopathy (PDR), involves the growth of new blood vessels on the retinal surface. In order to prevent blindness, early DR identification is crucial. Deep learning is a long-term solution for screening, diagnosing, and keeping track of patients in primary healthcare. In this study, we compare various deep-learning models for DR detection. The models include CNN, EfficientNetV2L, ResNet50, VGG19 and DenseNet201. These models were developed using the Kaggle dataset, which has around 35,126 images with a 2416\*1736 resolution. Methods including undersampling, contrast enhancement, and data preparation were used to improve the accuracy of the models. The unbalanced and bad dataset quality were major difficulties faced during the study. The stages of diabetic retinopathy are accurately identified using the residual network model.
 
-Word count: `r as.integer(sub("(\\d+).+$", "\\1", system(sprintf("wc -w %s", knitr::current_input()), intern = TRUE))) - 20`
+***Keywords--- Diabetic Retinopathy Detection; Residual Network; Transfer Learning; Deep Learning***
 
 ```{=tex}
 \pagebreak
@@ -68,13 +73,25 @@ Word count: `r as.integer(sub("(\\d+).+$", "\\1", system(sprintf("wc -w %s", kni
 \listoffigures 
 \pagebreak
 ```
+# Acknowledgements
+
+I would like to begin by expressing my sincere gratitude to Prof. James Brusey, who served as my first supervisor and offered continuous encouragement and constant guidance throughout this research. His feedback has enabled me to further improve my work. I'd also like to express my gratitude to Dr Fei He, who serves as my second supervisor, for his assistance with the project.
+
+I want to express my gratitude to God and my parents, and my brother for always being there for me, even when I felt like finishing the project would be impossible and beyond my capabilities. Most importantly, I wish to thank my cousin, Vinojo Francis and his family, for their moral support.
+
+I also want to express my appreciation and gratitude to every faculty member who has instructed me in this course and imparted their invaluable expertise, which has enabled me to finish this assignment.
+
+\pagebreak
+
 # Introduction
 
 One of the major causes of eye vision loss is diabetes. While delayed examination would have a higher effect on the retinal area of the eye, early detection of diabetes is crucial. The key factors affecting the rise in the occurrence of this disease are people's lifestyles and other contributing factors, and it is anticipated that this trend will continue. According to Tien Y Wong et al, among the 285 million diabetics worldwide, 33 percent of those individuals exhibit DR symptoms[@r2015]. Nearly 90% of individuals can be diagnosed, and long-term effects can be reduced, with thorough screening and regular checkups. Statistics show that the percentage of diabetic patients over the age of 18 has increased from 4.7% to 8.5%. About 61.3 million Indians between the ages of 20 and 79 have been diagnosed as diabetic patients. By 2030, it is predicted that this number would likely rise to 101.2 million [@whiting2011idf].
 
 The retinal blood vessels are harmed by a blood glucose spike.This rise in blood glucose levels primarily damages blood vessels, allowing blood to seep into the eyes and weakening the visual system. The brain activates the neighbouring cells to take control of the situation when it detects a blood leak. This behaviour causes aberrant blood vessel development. Newly created vessels lack strength. In time, they affect the person's vision. Therefore, it is essential that a diabetic patient constantly test routine eye exams. The significant issue here is that DR is primarily an asymptomatic eye condition that does not manifest distinctive symptoms until a late stage is reached. The manual examination of retinal image features is a challenging and taxing task, nevertheless. Many automated diagnostic technologies have been created recently to help ophthalmologists examine retinal abnormalities, which has helped to solve this problem.
 
-![Normal Retina Vs Diabetic Retinopathy Retina [@diabetica]](images/image%201.jpg "Normal Retina Vs Diabetic retinopathy Retina [@diabetica]"){width="400" height="300"}
+In this paper, diabetic retinopathy is classified according to severity. To aid doctors in the diagnosis and treatment of diseases, we are building different neural networks through deep learning, comparing the structures and selecting the optimal network. A correct diagnosis of diabetic retinopathy is crucial to detecting the disease early.
+
+![Normal Retina Vs Diabetic Retinopathy Retina - ***Source:**[@diabetica]*](images/image%201.jpg){width="400" height="300"}
 
 \newpage
 
@@ -88,7 +105,7 @@ Artificial neural networks have a structure that is comparable to biological neu
 
 Artificial neural networks use a range of mathematical processing layers to learn the data provided to them. Perceptrons are neural networks with only one layer. The input units (receptor), connection weights, summation function, computation, and output units make up an artificial neuron (effectors). The input layer receives information. The purpose of the neural network is to process or learn from this data. Data enters the input layer and then passes via one or more hidden levels. It is the job of the hidden layers to transform the input such that the output layer can use it. The weights typically represent the strength of the connections between the neurons. The activation function is used to obtain the desired result for the given problem. There are several activation functions, For instance, ReLU, linear regression, logistic regression, identity function, binary sigmoid, bipolar sigmoid, bipolar, hyperbolic tangent [@v2021a]. An enormous amount of data, known as a training set, must be provided to ANNs in order for them to learn.
 
-![A neural network with three hidden neurons in one hidden layer and four inputs [@113neu].](images/ann.jpg){width="298"}
+![A neural network with three hidden neurons in one hidden layer and four inputs- **Source:** [@113neu].](images/ann.jpg){width="298"}
 
 According to a study of AI applications in health care, Artificial neural networks have been used in important illness areas like cancer or cardiology etc. Clinical diagnosis, cancer prediction, speech recognition, image analysis, and drug research are examples of uses of ANN in the healthcare industry [@shahid2019].
 
@@ -96,19 +113,33 @@ According to a study of AI applications in health care, Artificial neural networ
 
 Convolutional neural networks, also known as convnets or CNNs. CNN is a powerful and effective image processing algorithm. It is a subset of the feed-forward artificial neural network models that are employed for diverse purposes. In the late 1990s, Bell Labs professor Yann LeCunn developed the first effective convolution networks. Convolutional Neural Networks specialized in image & video recognition applications. CNN is primarily utilised for image analysis applications such segmentation, object detection, and image recognition [@tripathi2021]. It have millions of parameters, a large number of hidden layers, and input and output layers. Prior to applying an activation function, it subsamples the input using convolution and pooling techniques. All of the hidden layers are partially connected , with the completely connected layer at the end resulting in the output layer. All image processing applications, including face and pattern recognition, have shown CNN to be extremely effective. There are numerous architectures used by CNN, including LeNet, AlexNet, GoogleNet, ConvNet, and ResNet.
 
-![Typical CNN architecture [@kumar2022]](images/Typical-CNN-architecture.png){width="470"}
+![Typical CNN architecture- Source: [@kumar2022]](images/Typical-CNN-architecture.png){width="470"}
 
 **Convolutional Layer**
 
 Filters are combined to produce convolutional layers, which are then applied to input images. A feature map also known as an activation map, a representation of the input image with the filters applied, is the outcome of the convolutional layer.
 
-![Convolutional Layer - **Source:** [@reynolds]](images/covoltionlayer.png){width="386"}
+![Convolutional Layer - Source: [@reynolds]](images/covoltionlayer.png){width="386"}
 
 **Pooling layer**
 
 By pooling layers, the input can be processed more quickly and with less memory use due to its reduced spatial size. Every feature map is handled independently by the pooling layer. Pooling also facilitates a decrease in the number of parameters and accelerates training. Max pooling and average pooling are the two primary types of pooling. While average pooling uses the average value from each feature map, max pooling uses the maximum value.
 
-![Pooling in CNN [@student2018]](images/pooling.png){width="371"}
+![Pooling in CNN- Source: [@student2018]](images/pooling.png){width="371"}
+
+\newpage
+
+**Dropout Layer**
+
+There are different deep neural network architectures, sometimes very deep and sometimes shallow. Nevertheless, while learning the data features, they sometimes learn the statistical noise in the dataset. This dramatically improves the model's performance on the training dataset but fails miserably when applied to the validation dataset. This is the problem of overfitting. To overcome this issue, we use the dropout layer.
+
+![Dropout Layer - Source: [@budhiraja2018]](images/droput.png){width="345"}
+
+**Flatten Layer**
+
+Flattening transforms the data into a one-dimensional array before inputting it to the next layer. The convolutional layer output is flattened to create one long feature vector. Moreover, it is connected to the final classification model, a fully-connected layer.
+
+![Flatten Layer - Source: [@kongsilp2019]](images/flatten.png){width="396"}
 
 **Fully connected layer**
 
@@ -118,7 +149,7 @@ The final layer of a convolutional neural network is fully connected layer. Each
 
 Transfer learning is the process of applying a previously learned model to a new problem. Transfer learning is the process through which we attempt to apply the knowledge that have gained from one assignment to another in order to better understand the concept. Transfer learning is useful in situations when it is not possible to get the large amounts of data required to train a neural network from scratch.
 
-![Transfer Learning Concept - **Source** [@transfer]](images/Screenshot%202022-12-04%20at%2018.40.00-01.png){width="438"}
+![Transfer Learning Concept - **Source** [@turingenterprisesinc]](images/Screenshot%202022-12-04%20at%2018.40.00-01.png){width="438"}
 
 Transfer learning can provide an effective machine learning model with relatively minimal training data because the model has already been trained. Additionally, training time is reduced because it can take days to complete a complicated task after creating a deep neural network from scratch [@sharma2021].
 
@@ -136,25 +167,29 @@ Convolutional neural networks (CNNs) and a transfer learning model were both use
 
 ## Overview of This Report
 
+In the introduction, the report discusses the project's significance and objectives. A literature review in section 2 summarizes the major points outlined from researching relevant works by other researchers. Section 3 of the report, titled "Methodology," covers the usage of an agile methodology. Section 4 contains the dataset used for the model, the system and functional requirements, and the skills needed to implement the project. In Section 6, the implementation section is discussed, including how the models are trained using the data, how data preprocessing is performed, and how the model is trained and evaluated. In Section 7, we discuss the model outcomes, which allow us to compare them and decide which model is most efficient. Section 8 covers the project management aspect as well as various ethical, social, and legal issues. The project is concluded in Section 10, which gives a brief summary of all the implementation phases, outcomes, and predicted future scope of the project. After that comes student reflection, the report's bibliography and appendices. 
+
 \newpage
 
 # Literature Review
 
-In recent years, numerous deep learning based automatic DR detection systems have emerged. In this section, some of the recent research projects have been addressed.
+In recent years, numerous deep learning-based automatic DR detection systems have emerged. In this section, some of the recent research projects have been addressed.
 
-A technique for recognising diabetic retinopathy based on transfer learning is proposed by Yuchen Wu et.al [@8725801]. They used data from the official Kaggle website, then they conduct data amplification, data flipping, data folding, and contrast adjusting. Then, use pretrained model such as VGG19, InceptionV3, Resnet50, etc. They oversample the data category with a small number due to the severely unbalanced data. The performance of VGG19 was 51 % accuracy and Resnet50 was 49% InceptionV3 performed better than other models with classification accuracy of 60%.
+A technique for recognising diabetic retinopathy based on transfer learning is proposed by **Yuchen Wu et al.[@8725801].** They used data from the official Kaggle website, and then they conducted data amplification, data flipping, data folding, and contrast adjusting. Then, employ pre-trained models such as VGG19, InceptionV3, Resnet50, etc. They oversample the data category with a small number due to the severely unbalanced data. The performance of VGG19 was 51 % accuracy, and Resnet50 was 49% InceptionV3 performed better than other models with a classification accuracy of 60%.
 
-Using transfer learning, Esra Kaya and Ismail Saritas created CNN for the identification of diabetic retinopathy [@9828576]. To find the best effective architecture, photographs from the DRIVE (Digital Retinal Images for Vessel Extraction) dataset of DR patients and healthy people were classified using Convolutional Neural Network (CNN) architectures as a transfer learning technique. They utilised contrast-limited adaptive histogram equalisation to improve the clarity of the image. They assessed the ResNet18, GoogleNet, and SqueezeNet CNN architectures' performances as feature extraction techniques and classifiers. For ResNet18 and squuezeNet, they employed adam optimizer, while for googleNet, they used sgdm. There are 71 layers in ResNet18, 144 layers in GoogleNet, and 68 layers in SqueezeNet. ResNet18 was discovered to be the most effective architecture as a classifier with 100% accuracy.
+Using transfer learning, ***Esra Kaya and Ismail Saritas*** created CNN for the identification of diabetic retinopathy [@9828576]**.** To find the best effective architecture, photographs from the DRIVE (Digital Retinal Images for Vessel Extraction) dataset of DR patients and healthy people were classified using Convolutional Neural Network (CNN) architectures as a transfer learning technique. They utilised contrast-limited adaptive histogram equalisation to improve the clarity of the image. They assessed the ResNet18, GoogleNet, and SqueezeNet CNN architectures' performances as feature extraction techniques and classifiers. For ResNet18 and squeezeNet, they employed adam optimiser, while for googleNet, they used sgdm. There are 71 layers in ResNet18, 144 layers in GoogleNet, and 68 layers in SqueezeNet. ResNet18 was discovered to be the most effective architecture as a classifier with 100% accuracy.
 
-Fundus images from the Kaggle opensource dataset were used by Nikhil Sathya Kumar and Dr. B. Ramaswamy Karthikeyan to identify DR using CNNs, Transformers, and MLPs [@9651024]. The dataset includes more than 3600 photographs with a resolution of 2416\*1736. ResNet and EfficientNet based on CNN, Vision-Transformer and SwinTransformer based on Transformer, and MLP-Mixer based on MLP architecture were the models chosen for this study.The findings show that, in comparison to CNN and MLP based models, Transformer based models were more accurate. All models underwent 15 epochs of training. The most accurate Transformer-based model was Swin with 92.49% accuracy.
+Fundus images from the Kaggle open-source dataset were used by ***Nikhil Sathya Kumar and Dr B. Ramaswamy Karthikeyan*** to identify DR using CNNs, Transformers, and MLPs [@9651024]. The dataset includes more than 3600 photographs with a resolution of 2416\*1736. ResNet and EfficientNet based on CNN, Vision-Transformer and SwinTransformer based on Transformer, and MLP-Mixer based on MLP architecture were the models chosen for this study. The findings show that, in comparison to CNN and MLP-based models, Transformer based models were more accurate. All models underwent 15 epochs of training. The most accurate Transformer-based model was Swin, with 92.49% accuracy.
 
-ImageNet model was proposed by Jayakumari.C et.al [@9215270]. Here the TensorFlow framework is used to build a convolutional neural network model in Python. The size of each image has been reduced to 224 X 224 X 3. The dataset is under-sampled here because to the imbalance in the dataset. Additionally, to improve accuracy, the classes were reduced from 5 to 2. The model trained the network using the Adam optimizer and categorical cross-entropy as a loss function. The model was executed 100 epochs. The model accuracy in training was 98.8%, and in validation accuracy was 98.5%.
+ImageNet model was proposed by ***Jayakumari.C et al***. [@9215270]. Here the TensorFlow framework is used to build a convolutional neural network model in Python. The size of each image has reduced to 224 X 224 X 3. The dataset is under-sampled here because of the imbalance in the dataset. Additionally, to improve accuracy, the classes were reduced from 5 to 2. The model trained the network using the Adam optimiser and categorical cross-entropy as a loss function. The model has executed 100 epochs. The model accuracy in training was 98.8%, and the validation accuracy was 98.5%.
 
-A CNN method was suggested by Frans Coenen et.al to diagnose DR with a sensitivity of 95 % and accuracy of 75% [@pratt2016convolutional].They train the network using a high-end graphics processor unit (GPU) on the publicly available Kaggle dataset.
+A CNN method was suggested by ***Frans Coenen et al***. to diagnose DR with a sensitivity of 95 % and an accuracy of 75% **[@pratt2016convolutional].** They train the network using a high-end graphics processor unit (GPU) on the publicly available Kaggle dataset.
 
-Pathak et.al classified early-stage DR using a deep learning method [@9432312]. They have employed a variety of classifier-based techniques, including SVM (Support Vector Machine), CNN (Convolution Neural Network), DCNN (Deep Convolution Neural Network), ANN (Artificial Neural Network), NB (Naive Bayes), and threshold-based strategies. The model achieved 90% accuracy for the SVM, 91% for the ANN, 92.9% for the NB, 97% for the Thresholding-Based, and 96.5% for the DCNN. They concluded that the DCNN technique is highly accurate and productive.
+***Pathak et al.*** classified early-stage DR using a deep learning method [@9432312]**.** They have employed a variety of classifier-based techniques, including SVM (Support Vector Machine), CNN (Convolution Neural Network), DCNN (Deep Convolution Neural Network), ANN (Artificial Neural Network), NB (Naive Bayes), and threshold-based strategies. The model achieved 90% accuracy for the SVM, 91% for the ANN, 92.9% for the NB, 97% for the Thresholding-Based, and 96.5% for the DCNN. They concluded that the DCNN technique is highly accurate and productive.
 
 \newpage
+
+## Summary
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | **Methods & Ref**                                                                                                                            | **Datasets Used**                                                                                              | **Techniques**                                                                                                                                                                                                                                                                      | **Performance metrics**                                                                                                        |
@@ -202,68 +237,57 @@ Pathak et.al classified early-stage DR using a deep learning method [@9432312]. 
 
 The software development life cycle involves using common business procedures for creating software applications. After carefully examining a few well-known models, including Waterfall, Iterative, V-Model, and Agile approach, I have chosen to adopt the Agile model in this study.
 
-**Agile Methodology**
+## Agile Methodology
 
-Agile is a method of software development that aims to provide functional software consistently through rapid iterations [@whatis]. An agile methodology emphasizes a cooperative, iterative, and incremental approach to project management.
+Agile is a method of software development that aims to provide functional software consistently through rapid iterations [@whatis]. An agile methodology emphasizes a cooperative, iterative, and incremental approach to project management. It comes in a variety of forms, including scrum, crystal, extreme programming (XP), and feature-driven development (FDD).
 
-1.  **Better quality**
+![Agile Methodology - Source: [@synopsys2017]](images/agile-development.jpg){width="449"}
 
-2.  **Speed and flexibility**
+**Pros:**
 
-3.  **cost management**
+1.  Better quality
 
-    The team consider the budget when making decisions after each stage.This is a crucial component of project management since it enables teams to comprehend the expenses associated with each feature, which will be taken into consideration when making strategic decisions.
+2.  Speed and flexibility
 
-4.  **Project's progress is fully visible and updated in real-time**
+3.  cost management
 
-5.  **stakeholders' participation**
+4.  Project's progress is fully visible and updated in real-time
 
-## *Data pre-processing*
+5.  stakeholders' participation
 
-Image pre-processing was performed with the aim to decrease unclear image and reduce image size. The plot below illustrates the class imbalance in the original dataset.
+Agile software development's main advantage is that it enables iterative software releases. Iterative releases increase productivity by enabling teams to identify and correct flaws and set expectations early on. With regular incremental enhancements, they also enable consumers to enjoy the benefits of software earlier.
 
-![Initial data distribution](images/LevelsOfDR.png){width="343"}
+**Cons:**
 
-The dataset consist of 35,126 set of images. The orginal image have 1944 \* 2592 \* 3 size, and all images are jpeg format. The classes have an uneven distribution of images. In the Figure above, the precise distribution is displayed.
+Agile development methodologies focus on in-the-moment communication, thus new users frequently lack the necessary background information to get started. They are time- and labor-intensive because developers must finish each feature inside each iteration before asking users for approval.
 
-1.  Image Resizing
+## Evaluation Metrics
 
-    Due to the enormous size of the dataset, it was drastically downsized before being sent to the network. Each input image is 256 \* 256 in size after resizing.
+1\) **Metrics Evaluation:** We were able to determine metrics like as accuracy, precision, recall, and F1-Score Score, By making predictions on the test sets for all five models.
 
-2.  Removing Unclear Image
+**Accuracy:** One of the popular evaluation metric is accuracy (see equation below). The total number of two right predictions (TP + TN) divided by the overall dataset size (P + N) is used to calculate accuracy. According to our evaluations, DenseNet201, VGG19, and EfficientNet V2L all have accuracy values of 61%, while ResNet50 has the greatest accuracy value of 63%.
 
-    Some images have a blackish or white tint. Because it might affect the outcome, this type of image cannot be fed into the network. The removal of an unclear image is a crucial step that must be taken.
+$$
+{ACC = \frac{TP +TN}{TP + TN + FN + FP} = \frac{TP + TN}{P + N}}
+$$
 
-![A sample retinal image frame with and without DR](images/Screenshot%202022-11-26%20at%2014.24.48.png){width="289"}
+**Precision and Recall:** Other commonly used evaluation metrics include precision and recall. Recall tells us about what portion of actual positives is correctly identified, while precision shows us clearly what percentage of projected positives is indeed a true positive.
 
-**Data augmentation**
+$$
+ {PREC = \frac{TP}{TP + FP}}
+$$
 
-One of the regularisation strategies is data augmentation. Regulating data aims to prevent the developed model from being overfit. Data augmentation is a method of manipulating data without distorting its core or essence.
+$$
+{RECALL = \frac{TP}{TP + FN}}
+$$
 
-**Contrast Limited Adaptive Histogram Equalization (CLAHE ) Approach**
+**F1-Score:** The F1-score, which is the harmonic mean of Precision and Recall.
 
-Adaptive histogram equalisation has a variation known as Contrast Limited Adaptive Histogram Equalization. CLAHE performs contrast limiting and high precision histogram equalisation in small patches or tiles [@senaratne2020]. Instead of processing the entire image, CLAHE works with discrete sections of it called tiles. The false borders are then eliminated by combining the adjacent tiles using bilinear interpolation. To enhance the contrast of photographs, this method is used.
+$$
+{F1-SCORE = {\frac{(1 + \beta^2) (PREC \cdot REC)}{(\beta^2 \cdot PREC + REC)}}}
+$$
 
-![Before CLAHE\
-](images/Screenshot%202022-11-26%20at%2014.24.48-01.png){width="251" height="60"}
-
-![After CLAHE](images/Screenshot%202022-12-01%20at%2020.26.17-01.png){width="248"}
-
-**Under-Sampling**
-
-In order to balance the class distribution for a classification dataset with a skewed class distribution, a procedures known as under-sampling has been used. One or more classes (the minority classes) will have few examples, while one or more classes (the majority classes) will have many instances (the majority classes). Here, we can observe that the class with the label "no DR" has the most images. This will impact the experiment's outcome. The quality of the data is directly correlated with the quality of the model. The approach taken in this study is to "undersample" the data category with a large number in the original data set.
-
-To obtain good accuracy for training, the images have been categorised into two groups since the Dataset primarily contains images from the No DR category and contains few images from other categories.
-
-![Data Distribution after under-sampling](images/Screenshot%202022-12-02%20at%2016.30.33.png){width="298"}
-
-| **Type of Diabetics Diagnosis** | **No. of Images** |
-|---------------------------------|-------------------|
-| With DR                         | 5152              |
-| Without DR                      | 5152              |
-| **Total**                       | **10304**         |
-
-: Diabetic Retinopathy Dataset
+*Typically, beta is 0.5, 1, or 2.*
 
 \pagebreak
 
@@ -337,29 +361,289 @@ We need to acquire a few specific deep learning related skills before we can beg
 
 : System Configuration
 
-\newpage
+## Functionality Requirements
 
-# Analysis
+• Acquire the dataset of retinal images
+
+• Employ preprocessing techniques
+
+• Divide the dataset into training and testing in the proportion of 70-30%
+
+• Build the CNN and Transfer Learning models for classification
+
+• Plot the training and validation accuracy of the models
+
+• Evaluate the models based on the classification report
+
+• Fine Tune the model
+
+\newpage
 
 \newpage
 
 # Design
 
-This section reviews numerous approaches and methods for various classifiers namely CNN, ResNet50, VGG19, DenseNet201 and EfficientNet V2L.
+This programme is made up of various components, each of which carries out a distinct function.The blocks and their operation are shown in figure 18. Figure 19 illustrates how all the blocks are connected to create a high-level design. Below are brief descriptions of each block's function.
 
-.
+1.  **Data Loading**: This data set was provided by EyePacs and was downloaded from Kaggle. The data was part of a Kaggle competition. The dataset contains high-resolution retinal images. The images are categorized into five categories based on the severity of the lesions. The TensorFlow input pipeline is used to load data. In tf.data.dataset, the data is loaded in chunks or batches, which makes it possible to manage large amounts of data.
 
-***ResNet architecture***
+2.  **Data Preprocessing and Splitting:** In any machine learning project, preprocessing data is a critical step. It involves transforming or encoding data in order to make it easier for machines to parse. An algorithm must be able to easily interpret the features of data in order to be accurate and precise in its predictions. Using OpenCV, we reduced the image's resolution to 256 × 256 pixels. Furthermore, images that have more than 40% black and white pixels are eliminated. CLAHE also attempted to improve the contrast of images. The under-sampling method was also implemented due to the imbalance in the dataset.
 
-In the community of computer vision and deep learning during the past few years, ResNet was undoubtedly the most revolutionary work. ResNet enables training of up to hundreds or thousands of layers while maintaining impressive performance. The residual learning idea allows the neural network to extract more high-level properties from images and use them for classification with a lower error rate
+    Additionally, the dataset will also be divided into a training set and a testing set, which will enable us to train our model using the training set. The test set is analyzed to assess our model's performance and determine evaluation measures including recall, accuracy, and precision.
 
-Resnet50
+3.  **Model Building:** We will create a CNN and transfer learning model for our classification in this block. To obtain the best accurate model, we will train the model using different hyperparameters.
 
-Convolutional neural network ResNet-50 has 50 layers (48 convolutional layers, one MaxPool layer, and one average pool layer). On an ImageNet dataset, the ResNet50 model was initially trained.
+4.  **Model Evaluation and Fine tuning:** In order to identify the best model, we will evaluate each model's accuracy, recall, precision, and F1 score. We will later fine-tune the chosen model for better outcomes. Additionally, this block makes sure that data is recorded and stored on disc for future analysis.
+
+![High Level Design](images/Screenshot%202022-12-07%20at%2002.48.47.png){width="496"}
+
+\newpage
 
 # Implementation
 
-# Testing
+In this section, we discuss how the project is implemented. The code for the project has been written in Python and is stored on GitHub. Data preprocessing was performed using Jupyter notebook, and model training was performed using Google Colab Pro. Google Collaboratory is a service that allows users to run their Python code directly through their web browser using high-end Collaboratory hardware. Since we are using pre-trained models, completing our research by training each model will take a long time. Because of its tremendous computational capacity, Google Colaboratory Pro makes it much simpler and quicker to train the models. Data was loaded and preprocessed using Tensorflow, Keras, and OpenCV, and the matplotlib package generated graphs. Additionally, OpenCV is used for removing blurred images and implementing the CLAHE method. The Keras API and TensorFlow library gave us all the tools we needed to complete our deep-learning experiment.
+
+## Data Loading
+
+First, the dataset was downloaded from the Kaggle website. The data was in the form of a zip file with a 30 GB size. The downloaded data was unzipped using the keka extractor. The dataset's size became 58.5 GB after unzipping. It contains 35,126 high-resolution RGB images and a CSV file with the scores for the images.
+
+![Images Label CSV](images/Screenshot%202022-12-07%20at%2014.18.55.png){width="157"}
+
+Tensorflow's input pipeline was utilised to load the dataset successfully. The result of this is a file called tf.data.Dataset. Using matplotlib, we first determined the image's original dimensions. The image's dimensions were 1944 x 2592. Figure x shows a sample image from the orginal dataset. For visualisation, we choose eight images from the dataset.
+
+![The Orginal dataset](images/Screenshot%202022-12-07%20at%2014.29.56.png){width="421"}
+
+![Sample Image](images/Screenshot%202022-12-07%20at%2014.19.53.png){#sampleimage width="239"}
+
+## Data Preprocessing
+
+Image preprocessing is a significant phase in image classification. As we mentioned earlier, the image size was massive, so in order to speed up the process, we reduced the image size to 256 \* 256 pixels using the cv2.resize() function of the OpenCV library cv2.
+
+![Resized image dimension](images/Screenshot%202022-12-07%20at%2014.40.24.png){width="257"}
+
+After examining the images, we apprehended that some images are blurred and dark. This kind of image influences the performance of the models. So utilizing the help of NumPy, we removed the images with 40% of black and white pixels. There were 15068 unclear images.
+
+![Unclear Image](images/551_left.jpeg){width="217"}
+
+**Enhancement using Contrast Limited Adaptive Histogram Equalization (CLAHE)**
+
+After resizing and removing the blurred images, there were 20,059 images. Then We attempted to implement the Contrast Limited Adaptive Histogram Equalization (CLAHE) technique employed by B. Ramasubramanian and S. Selvaperumal in their study to enhance the image's contrast.
+
+Using contrast-limited adaptive histogram equalisation (CLAHE), the green channel of the retinal picture is divided into contextual regions, and histogram equalisation is then applied to each zone. CLAHE performs contrast limiting and high precision histogram equalisation in small patches or tiles [@senaratne2020]. Instead of processing the entire image, CLAHE works with discrete sections of it called tiles. The false borders are then eliminated by combining the adjacent tiles using bilinear interpolation. To enhance the contrast of photographs, this method is used.
+
+![Before Implementing CLAHE](images/Screenshot%202022-11-26%20at%2014.24.48-02.png){width="302"}
+
+![After implementing CLAHE](images/Screenshot%202022-12-01%20at%2020.26.17-02.png){width="305"}
+
+CLAHE was implemented using the cv2.createCLAHE() function of the OpenCV library with two clip limits and an eight-title grid size. The images are then saved in another new folder.
+
+![Implementing CLAHE method](images/Screenshot%202022-12-07%20at%2015.29.34.png){width="319"}
+
+After executing CLAHE technique, we separate the images into five folders based on the class labels 0 to 5. Below figure shows the number of images in each folder.
+
+![Data Distribution](images/Screenshot%202022-12-07%20at%2015.35.31.png){width="576"}
+
+\newpage
+
+The dataset was imbalanced. The class with No DR have the majority of images. It will impact the experiment's outcome. To handle the imbalanced dataset, first, we reduced the number of classes to two, "With DR" and "Without DR". Then we implemented the under-sampling technique to balance the dataset.
+
+![Python code for under-sampling](images/Screenshot%202022-12-07%20at%2015.46.53.png){width="299"}
+
+| **Type of Diabetics Diagnosis** | **No. of Images** |
+|---------------------------------|-------------------|
+| With DR                         | 5152              |
+| Without DR                      | 5152              |
+| **Total**                       | **10304**         |
+
+: Diabetic Retinopathy Dataset
+
+## Data Splitting
+
+Using the tf.keras.utils.image_dataset_from_directory() function, we divided the dataset into training and validation sets. Before the split, we shuffled the dataset. The dataset has been divided into training and validation in a 7:3 ratio.
+
+![Data Splitting](images/Screenshot%202022-12-08%20at%2002.40.12.png){width="238"}
+
+\newpage
+
+## Model Creation
+
+### Implementation of Machine learning model for image classification
+
+This section will examine how we classified images using the KNN Classifier, the simplest supervised machine learning method. We will import our dataset into Sklearn and split it into training and testing sets. With three colour channels, each image is 256 \* 256 pixels in size. During preprocessing, the data are normalized by dividing x train and x test by 255. In order to use the image for categorization using machine learning techniques, we must first convert it into a 2d array because we are using sklearn.
+
+**K Nearest Neighbor**
+
+The k-nearest neighbours algorithm, sometimes referred to as KNN or k-NN, is a supervised learning classifier that employs proximity to produce classifications or predictions about the grouping of a single data point [@whatisa]. By looking at which group the data points closest to a given data point belong to, it calculates the likelihood that a given data point will join that group or a different one.
+
+![KNN diagram](images/knn.png){width="467"}
+
+### Implementation of Deep Learning for image classification
+
+**Classification using CNN**
+
+Convolutional Neural Networks are a subset of artificial neural networks used in deep learning and are frequently employed for object and picture recognition and categorization. During the training phase, it includes feature extraction and weight calculation. The images is initially forwarded to a feature extraction network, and then the extracted features are subsequently sent to a classifier network.
+
+We employed the keras library to construct the model. Hyperparameters like kernal size, stride, padding, and the number of feature mappings must also be considered while developing a model. Here we used batch size 16. We have added layers like batch normalisation and dropout in addition to the max pooling layer. The model is then connected to a flatten layer, which creates a one dimension feature vector. A softmax activation function is used to predict the probabilities for each class using the vector before it is handed down to the dense or fully linked layer.
+
+![Model Summary](images/Screenshot%202022-12-07%20at%2017.12.47.png){width="409"}
+
+\newpage
+
+**Model Construction**
+
+In the first convolution layer, 32 feature maps with kernel size 3 3, stride size one and padding equal to the same. We used max pool operation with pool size two and padding the same for the pooling layer. This layer's output will be (256, 256, 32). For the second convolution layer, 32 feature maps with kernel size 3 3, stride size one and same padding were used. Max pooling was used with pool size two and padding same. This layer's output will be (256, 256, 32).
+
+Additionally, we have applied batch normalisation and dropout to both of our layers. The dropout layer can help correct overfitting and batch normalisation aid to normalise the layers to speed up and stabilise artificial neural network training. The model is then connected to a flatten layer, which creates a feature vector with just one dimension. The model is then connected to a fully connected layer, and the final layer will have two neurons which is the number of classes in our dataset.
+
+![Model construction](images/Screenshot%202022-12-08%20at%2020.34.59.png){width="505"}
+
+**Model Training**
+
+In this step, we will compile and train our model. If specific requirements are met, the network will be stopped early in the training process using the early stopping callback method we have included. This function keeps track of the validation loss value after each epoch to stop the model from overfitting. If the validation accuracy has stopped improving after five epochs, the model stops training our network.
+
+![Early Stopping and checkpoints](images/Screenshot%202022-12-07%20at%2018.18.44.png){width="540"}
+
+\newpage
+
+In the following section, we will train our model. We have set 50 training epochs for the model. We used categorical cross entropy as a loss function, a common loss function for multi-class problems. We employed an optimizer known as Adam for the optimization process with learning rate 0.001. During training, this method modifies the weights of a network. Figures 27 and 28 display the model compilation and training, respectively.
+
+![Model compilation](images/Screenshot%202022-12-07%20at%2018.25.58.png){width="457"}
+
+Now, we will start training our model. We have passed the training data, labels, number of epochs, batch size and callback functions.
+
+![Model Training](images/Screenshot%202022-12-07%20at%2018.33.35.png){width="458"}
+
+Finally, the training stopped at the seventh epoch because the early stopping callback criteria met.
+
+\newpage
+
+**Classification using transfer learning model**
+
+***ResNet50***
+
+The convolutional neural network (CNN) variant known as ResNet (Residual Network) was first introduced in the 2015. A 50-layer convolutional neural network is called ResNet-50 (48 convolutional layers, one MaxPool layer, and one average pool layer). Residual neural networks are a type of artificial neural network (ANN) that forms networks by stacking residual blocks [@resnet-5].
+
+**EfficientNetV2L**
+
+For the EfficientNet model, 50 training epochs have been set. We used categorical cross entropy as a loss function, a common loss function for multi-class problems. We employed an optimizer known as Adam for the optimization process.
+
+**DeneseNet201**
+
+A DenseNet is a convolutional neural network that uses dense connections between layers by connecting all layers directly with one another using Dense Blocks. Each layer receives additional inputs from all previous layers and transmits its own feature-maps to all preceding layers to maintain the feed-forward structure [@huang2016]. The model accepts an input image with dimensions of 224 \* 224 \* 3 and contains 201 deep layers.
+
+**VGG19 (Visual Geometry Group)**
+
+VGG19 is a state-of-the-art CNN with pre-trained layers. It is very deep and has been trained on millions of images with convoluted classification methods [@bardhi2021]. It utilizes 19 layers.
+
+**Model Compilation and Training**
+
+**Pretrained Model on Keras**
+
+Keras has a pre-trained library. It makes using it quicker and more practical. Here's how to load the model in one line
+
+![](images/Screenshot%202022-12-07%20at%2019.21.06.png){width="419"}
+
+We modified all models, such as ResNet50, DeneseNet201, EfficientNetV2L and VGG19, by including Global Average Pooling and a dense output layer. Also, for all models, we have used the "Adam" optimizer. We have set 50 training epochs for all models. We used categorical cross entropy as a loss function, a common loss function for multi-class problems.
+
+![model Compilation](images/Screenshot%202022-12-07%20at%2019.24.57.png)
+
+## Model Evalution
+
+After training, we will evaluate the model's performance on the validation set. To evaluate the model, I have used a classification report from sklearn.metrics, where we pass the labels and attributes. We will be able to evaluate the model's performance for the validation set after executing it. The findings will be covered in section 7.
+
+\newpage
+
+# Results
+
+## ResNet50 Model
+
+The model is trained for 100 epochs, but it stopped performing at the 11th epoch because the validation accuracy did not improve. The model training took 26 minutes to complete, and The figure below shows the classification report of the model.
+
+***Accuracy:** 61 % **Precision:** 66 % **Recall:** 63% **F1-Score:** 61%*
+
+![Classification Report](images/Screenshot%202022-12-07%20at%2019.16.39.png){width="365"}
+
+## EfficientNetV2L Model
+
+The model is trained for 100 epochs, but it stopped performing at the 17th epoch because the validation accuracy did not improve. The model training took 35 minutes to complete, and The figure below shows the classification report of the model.
+
+***Accuracy:** 61 % **Precision:** 61 % **Recall:** 61% **F1-Score:** 61%*
+
+![Classificatio report of EfficeintNetV2L](images/Screenshot%202022-12-07%20at%2020.08.34.png){width="315"}
+
+\newpage
+
+## DenseNet201 Model
+
+The model is trained for 100 epochs, but it stopped performing at the 17th epoch because the validation accuracy did not improve. The model training took 35 minutes to complete, and The figure below shows the classification report of the model.
+
+***Accuracy:** 60 % **Precision:** 62% **Recall:** 61% **F1-Score:** 60%*
+
+![Classification model of DeneseNet201](images/Screenshot%202022-12-07%20at%2020.07.06-01.png){width="318"}
+
+## VGG19 Model
+
+The model is trained for 100 epochs, but it stopped performing at the 13th epoch because the validation accuracy did not improve. The model training took 45 minutes to complete, and The figure below shows the classification report of the model.
+
+***Accuracy:** 60 % **Precision:** 62% **Recall:** 61% **F1-Score:** 60%*
+
+![Classification report of VGG19](images/Screenshot%202022-12-07%20at%2020.06.12.png){width="330"}
+
+\newpage
+
+## CNN
+
+We used 50 epochs for training the model, and it took nearly 35 mins to complete the training process. The early stopping callback criteria were satisfied during the 13th epoch. Hence the training was terminated. The model scored 51% for accuracy, 51% for precision, 51% for recall, and 47% for f1-score on the validation set. The figure below shows the classification report of the model.
+
+![Classification report of CNN](images/Screenshot%202022-12-07%20at%2022.57.08.png){width="388"}
+
+## KNN
+
+We attempted to execute the KNN algorithm to see the performance of the data in the machine-learning model. Unfortunately, it didn't turn out as expected. We used the default best value of 7 to K. To prevent conflicts while making decisions, K is typically taken as an odd number. KNN have the drawback that classification becomes slower as the dataset gets larger. KNN's performance is shown in the following figure.
+
+![Classification report of KNN](images/Screenshot%202022-12-08%20at%2012.05.09-01.png){width="371"}
+
+To evaluate machine learning models on limited data, we applied a 10-fold cross-validation method. In machine learning, cross-validation is mostly used to assess how well a machine-learning model performs on unseen data. That is, to use a small sample to estimate how the model will generally perform to generate predictions on data.
+
+![10 fold cross-validation](images/Screenshot%202022-12-08%20at%2012.27.56.png){width="296"}
+
+The above figure shows the accuracy in each fold. The highest score is 0.5669
+
+\newpage
+
+## Plots for the model
+
+### ResNet50
+
+![](images/Screenshot%202022-12-07%20at%2023.59.29.png){width="373"}
+
+### EfficientNetV2L
+
+![](images/Screenshot%202022-12-08%20at%2000.28.28.png){width="378"}
+
+### DenseNet201
+
+![](images/Screenshot%202022-12-08%20at%2001.02.09.png){width="376"}
+
+### VGG19
+
+![](images/Screenshot%202022-12-08%20at%2000.26.24-01.png){width="375"}
+
+### CNN
+
+![](images/Screenshot%202022-12-07%20at%2023.20.37.png){width="371"}
+
+### Fine tuning the model
+
+The method of fine-tuning involves taking a model that has already been trained to perform one specific task and then adjusting or modifying the model to have it execute a second comparable task. Setting base model.trainable = True will de-freeze the base model allowing for subsequent changes. We used the EfficientNet model to apply fine-tuning. The model's performance slightly increased to 62%.
+
+![Fine tuning](images/Screenshot%202022-12-07%20at%2020.11.41.png){width="372"}
+
+\newpage
+
+The prediction generated by the model on random photos is depicted in the figure below.
+
+![Prediction using ResNet50](images/Screenshot%202022-12-08%20at%2012.51.12.png){width="585"}
 
 \newpage
 
@@ -378,7 +662,7 @@ Project risk management is the process of locating, evaluating, and dealing with
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
 | **Risk**                     | **Mitigation**                                                                                                                                       | **Risk Severity** |
 +:=============================+:=====================================================================================================================================================+:==================+
-| Health Issue                 | Keep up a healthy sleep schedule and take medication if required.                                                                                    | Medium            |
+| Health Issue                 | Keep up a healthy sleep schedule and take medication if required.                                                                                    | High              |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
 |                              |                                                                                                                                                      |                   |
 +------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
@@ -399,49 +683,41 @@ To produce an acceptable project outcome, quality management is another aspect o
 
 Throughout the project, every social, legal, ethical, and professional concern has been taken into account, and every effort has been made to ensure that none of them has been violated. Deep learning studies frequently raise social, legal, and ethical concerns because to the usage of datasets with sensitive data and the possibility for individual issues. The dataset used in this project was taken from the publicly accessible website and was utilised without raising any ethical or legal issues because it was intended for study and research purposes. If any information from other people's research is used in this report for any purpose, the appropriate sources are cited and given due credit.
 
-# Critical Appraisal
-
-\newpage
-
 # Conclusions
-
-Google Collaboratory is a service that allows users to run their Python code directly through their web browser using high-end Collaboratory hardware, taking use of cloud computing. Since we are using pre-trained models, completing our research by training each model separately will take a long time. Because of its tremendous computational capacity, Google Colaboratory Pro makes it much simpler and quicker to train the models.
-
-In this study, the Keras API and TensorFlow library gave us all the tools we needed to successfully complete our deep learning experiment.
-
-1\) **Metrics Evaluation:** We were able to determine metrics like as accuracy, precision, recall, and F1-Score Score, By making predictions on the test sets for all five models.
-
-**Accuracy:** One of the popular evaluation metric is accuracy (see equation below). The total number of two right predictions (TP + TN) divided by the overall dataset size (P + N) is used to calculate accuracy. According to our evaluations, DenseNet201, VGG19, and EfficientNet V2L all have accuracy values of 61%, while ResNet50 has the greatest accuracy value of 63%.
-
-$$
-{ACC = \frac{TP +TN}{TP + TN + FN + FP} = \frac{TP + TN}{P + N}}
-$$
-
-**Precision and Recall:** Other commonly used evaluation metrics include precision and recall. Recall tells us about what portion of actual positives is correctly identified, while precision shows us clearly what percentage of projected positives is indeed a true positive.
-
-$$
- {PREC = \frac{TP}{TP + FP}}
-$$
-
-$$
-{RECALL = \frac{TP}{TP + FN}}
-$$
-
-**F1-Score:** The F1-score, which is the harmonic mean of Precision and Recall.
-
-$$
-{F1-SCORE = {\frac{(1 + \beta^2) (PREC \cdot REC)}{(\beta^2 \cdot PREC + REC)}}}
-$$
-
-Typically, beta is 0.5, 1, or 2.
 
 ## Achievements
 
+The diabetes retinopathy detection technology is studied in this work using image preprocessing technology and a deep learning algorithm and machine learning algorithm. In relation to the study's primary goal, "Can deep learning approach predict diabetic retinopathy," I think it's fair to say that this research used a rigorous approach to show that deep neural networks may predict diabetic retinopathy. This project tried to reproduce past work using the Kaggle dataset. We have referred to more than 15 research papers during the study of this project. We found only a few papers with the Kaggle Dataset. The majority of the papers use multiple datasets or different datasets. We tried to replicate the paper with the same dataset studied by Yuchen Wu et.al. They have achieved an accuracy of 60%. In data preprocessing, they applied data enhancement and contrast enhancement techniques. They employed the data enhancement method to deal with the unbalanced data. We managed the unbalanced data in my study using the data under-sampling technique.
+
+In conclusion, To achieve the classification based on the severity of diabetic retinopathy, this paper mainly focus on CNN and transfer-learning methods and fine-tunes the dataset using Keras's built-in pre-training model. Compared to the performance of replicated work, my model performed better. The accuracy rate rises with epochs, as can be seen from the table below. Indicating that the proper number of training epochs must be increased. With more time and by utilizing a high-performance computer, we can train the model to more epochs. The performance of the ResNet 50 network is the best in this work. The outcomes demonstrate that the model performed well during training. Due to the low quality of images across categories with Severe and Proliferative DR, testing also good positive results with some misclassification. Our proposed method is quite efficient with this Kaggle dataset. Using multiple datasets or different balanced datasets, we can further improve the accuracy of the models.
+
++-----------------------+-----------------------+-----------------------+
+| Neural Networks       | Epochs                | Accuracy              |
++=======================+=======================+=======================+
+| ResNet50              | 27                    | 63                    |
++-----------------------+-----------------------+-----------------------+
+| EfficientNetV2L       | 17                    | 61                    |
++-----------------------+-----------------------+-----------------------+
+| DenseNet201           | 17                    | 61                    |
++-----------------------+-----------------------+-----------------------+
+| VGG19                 | 13                    | 61                    |
++-----------------------+-----------------------+-----------------------+
+
+: Transfer learning models comparison
+
 ## Future Work
 
-In future studies, an extended data set can be used to design an algorithm that can give more successful and more stable results to test the detection rate of DR.
+Several methods could not be executed due to time constraints, but this section nevertheless tackles them in the form of suggestions that can be used in future work, even if the project's results were as anticipated. First, it is suggested to use multiple datasets from a different sources that can give more successful and more stable results. Some of the images in this dataset were out of focus, and some algorithms did not successfully identify features in the DR. Therefore, in the future, the algorithm can be improved to solve the effect of the inconsistent image. Additionally, we can expand the scope of the project. We can deploy the models and build software with a good user interface to help doctors diagnose this disease.
 
 # Student Reflections
+
+This research project has taught me a lot about machine learning, deep learning and image processing, and it has also assisted me in getting the most out of the concepts I've learned in class. It has also given me the chance to study diabetic retinopathy and its impact on this world.
+
+This study project's secondary, yet still major, learning outcome has been Project management, especially time management. Because effective time management is a crucial skill in any corporate environment, the meetings I scheduled with the supervisor and the careful planning of the objectives through the timeline have given me project management expertise that may be very beneficial for my career.
+
+The project's execution was the biggest challenge for me. But I was finally able to finish the project successfully and on time because of my efforts and the support I received, and I can say with certainty that I learnt a lot of hard and soft skills while working on this project.
+
+I believe I applied good approaches in the data pre-processing and model building and am delighted with the outcome of those. If there had been more time and computing capacity to apply a few more methods, the error in final predictions across various models might have been lower. Ultimately, I am happy with how my research turned out because I was able to respond to the research questions to a certain extent and produce results.
 
 \newpage
 
@@ -452,34 +728,94 @@ In future studies, an extended data set can be used to design an algorithm that 
 
 \newpage
 
-Appendix A -- Project Specification
+**Appendix A -- Interim Progress Report and Meeting Records**
 
-Appendix B -- Interim Progress Report and Meeting Records
-
-+------------+------------------------------+------------+------+
-| Meeting No | Discussed Topic              | Date       | Time |
-+============+==============================+============+======+
-| 1          |                              | 20/09/2022 |      |
-+------------+------------------------------+------------+------+
-| 2          |                              | 27/09/2022 |      |
-+------------+------------------------------+------------+------+
-| 3          |                              | 07/10/2022 |      |
-+------------+------------------------------+------------+------+
-| 4          |                              | 14/10/2022 |      |
-+------------+------------------------------+------------+------+
-| 5          |                              | 15/11/2022 |      |
-+------------+------------------------------+------------+------+
-| 6          |                              |            |      |
-+------------+------------------------------+------------+------+
-
-Appendix C -- Requirements Specification Document
-
-Appendix D -- User Manual
-
-Appendix E -- Project Presentation
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| Meeting No | Discussed Topic                                                                                                                                                            | Date       |
++============+============================================================================================================================================================================+============+
+| 1          | -   First meeting with Dr Rochelle Sassman via MS Teams. She introduced the dissertation fundamentals and project timelines.                                               | 15/08/2022 |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+|            |                                                                                                                                                                            |            |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| 2          | -   First meeting with supervisor Prof. James Brusey.                                                                                                                      | 27/10/2022 |
+|            |                                                                                                                                                                            |            |
+|            | -   Discussion about forming a Microsoft Teams group to hold regular meetings.                                                                                             |            |
+|            |                                                                                                                                                                            |            |
+|            | -   Professor advised me to read various articles and find examples of dissertation-related documents in order to become familiar with and comprehend the project's topic. |            |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+|            |                                                                                                                                                                            |            |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| 3          | -   Ethics submitted and approved                                                                                                                                          | 07/10/2022 |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+|            |                                                                                                                                                                            |            |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| 4          | -   Physical meeting with the professor regarding clarification of the project's proposal.                                                                                 | 20/10/2022 |
+|            |                                                                                                                                                                            |            |
+|            | -   Professor advised me to create a GitHub repository and add him as a collaborator.                                                                                      |            |
+|            |                                                                                                                                                                            |            |
+|            | -   Professor shares a GitHub repository that includes the necessary guidelines for the project.                                                                           |            |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+|            |                                                                                                                                                                            |            |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| 5          | -   Shared initial coding via GitHub                                                                                                                                       | 08/10/2022 |
+|            |                                                                                                                                                                            |            |
+|            | -   Submitted initial report using Rmarkdown , and supervisor gave helpful feedback.                                                                                       |            |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+|            |                                                                                                                                                                            |            |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| 6          | -   Discussion with supervisor                                                                                                                                             | 15/11/2022 |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+|            |                                                                                                                                                                            |            |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| 7          | -   Submitted Interim report to supevisor                                                                                                                                  | 23/11/2022 |
+|            |                                                                                                                                                                            |            |
+|            | -   Supervisor advised me to try cross-validation and take out data-augmentation                                                                                           |            |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+|            |                                                                                                                                                                            |            |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
+| 6          | -   Conducted a meeting Via MS teams to discuss the project's presentation.                                                                                                | 5/12/2022  |
++------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+
 
 \newpage
 
-Appendix F -- Certificate of Ethics Approval
+**Appendix B -- Project Presentation**
 
-![](images/Screenshot%202022-12-05%20at%2002.20.50.png){width="565" height="756"}
+![](images/Screenshot%202022-12-08%20at%2014.19.08.png){width="379"}
+
+![](images/Screenshot%202022-12-08%20at%2014.22.53.png){width="384"}
+
+![](images/Screenshot%202022-12-08%20at%2014.23.42.png){width="406"}
+
+![](images/Screenshot%202022-12-08%20at%2014.24.45.png){width="469"}
+
+![](images/Screenshot%202022-12-08%20at%2014.25.25.png){width="471"}
+
+![](images/Screenshot%202022-12-08%20at%2014.27.18.png){width="465"}
+
+![](images/Screenshot%202022-12-08%20at%2014.27.31.png){width="466"}
+
+![](images/Screenshot%202022-12-08%20at%2014.27.44.png){width="460"}
+
+![](images/Screenshot%202022-12-08%20at%2014.29.52.png){width="462"}
+
+![](images/Screenshot%202022-12-08%20at%2014.30.03.png){width="460"}
+
+![](images/Screenshot%202022-12-08%20at%2014.30.52.png){width="483"}
+
+![](images/Screenshot%202022-12-08%20at%2014.31.04.png){width="491"}
+
+![](images/Screenshot%202022-12-08%20at%2014.31.56.png){width="523"}
+
+![](images/Screenshot%202022-12-08%20at%2014.32.08.png){width="539"}
+
+![](images/Screenshot%202022-12-08%20at%2014.32.18.png){width="543"}
+
+![](images/Screenshot%202022-12-08%20at%2014.32.28.png){width="537"}
+
+\newpage
+
+**Appendix F -- Certificate of Ethics Approval**
+
+![](images/Screenshot%202022-12-05%20at%2002.20.50.png){width="404"}
+
+\
